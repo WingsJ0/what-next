@@ -1,0 +1,36 @@
+@import '../../../../style/color';
+@import '../../../../style/size';
+
+.name {
+  position: relative;
+  height: 55px;
+
+  >.display,
+  >.edit {
+    width: 100%;
+    height: 100%;
+    padding: 0.2em 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: $size-border-main solid $color-border-main;
+    color: inherit;
+    font-family: inherit;
+    font-size: $size-font-title;
+    outline: none;
+    cursor: text;
+  }
+
+  >.display {
+    overflow: hidden;
+    font-weight: bold;
+    white-space: pre-wrap;
+    text-overflow: ellipsis;
+    word-break: break-all;
+  }
+
+  >.edit {
+    &:focus {
+      color: $color-edit;
+    }
+  }
+}

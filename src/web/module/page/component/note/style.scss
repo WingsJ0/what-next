@@ -1,0 +1,89 @@
+@import "../../../../style/color";
+@import "../../../../style/size";
+
+.note {
+  display: flex;
+  align-items: center;
+  padding: 0.2em 0;
+
+  &:hover {
+    color: white;
+    background-color: $color-sub;
+  }
+
+  > .content {
+    padding-right: 1em;
+    white-space: pre-wrap;
+    word-break: break-all;
+
+    &:focus {
+      outline: none;
+      color: $color-edit;
+    }
+  }
+
+  > .time {
+    flex-basis: 100px;
+    flex-grow: 1;
+    text-align: end;
+    margin-right: 1em;
+    color: $color-font-sub;
+    font-size: $size-font-small;
+    font-weight: thin;
+
+    > .wrap {
+      display: inline-block;
+      position: relative;
+
+      &:hover {
+        > .tip {
+          $border: $size-border-sub solid $color-emphasis;
+
+          height: fit-content;
+          padding-top: 0.4em;
+          padding-bottom: 0.4em;
+          border-top: $border;
+          border-bottom: $border;
+        }
+      }
+
+      > .finish {
+        color: $color-finished;
+      }
+
+      > .tip {
+        z-index: 10;
+        overflow: hidden;
+        position: absolute;
+        right: 0;
+        height: 0;
+        padding: 0 0.3em;
+        white-space: nowrap;
+        transition: height 0.3s, padding 0.3s;
+        background-color: white;
+        pointer-events: none;
+      }
+    }
+  }
+
+  > .state {
+    flex-shrink: 0;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    box-sizing: border-box;
+    border: 4px solid $color-border-main;
+    border-radius: 50%;
+    background: none;
+    cursor: pointer;
+
+    &.finished {
+      border: none;
+      background-color: $color-finished;
+    }
+
+    > input {
+      display: none;
+    }
+  }
+}

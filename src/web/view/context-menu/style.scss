@@ -1,0 +1,25 @@
+@import '../../style/color';
+@import '../../style/size';
+
+.context-menu {
+  display: inline-block;
+  position: fixed;
+  min-width: 6em;
+  padding: 0.2em 0.5em;
+  border: $size-border-main solid $color-sub;
+  border-radius: 0.2em;
+  background-color: white;
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  >.item {
+    line-height: 2;
+
+    &:not(:last-child) {
+      border-bottom: $size-border-sub solid $color-border-sub;
+    }
+  }
+}

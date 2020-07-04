@@ -1,0 +1,30 @@
+@import '../../../../style/color';
+@import '../../../../style/size';
+
+.chapter {
+  display: flex;
+  align-items: flex-end;
+  height: 3em;
+  border-bottom: 1px solid $color-border-sub;
+  font-size: $size-font-main;
+  line-height: 2;
+  cursor: pointer;
+
+  >.name {
+    flex-grow: 1;
+    overflow: hidden;
+    margin-right: 1.5em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  >.procede {
+    flex-shrink: 0;
+    color: $color-font-sub;
+    font-size: $size-font-small;
+
+    &.finished {
+      color: $color-finished;
+    }
+  }
+}

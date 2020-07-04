@@ -1,0 +1,66 @@
+@import '../../style/color';
+@import '../../style/size';
+
+.page {
+  $gap: 20px;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%;
+  padding: $gap*0.5 $gap 0 $gap;
+  box-sizing: border-box;
+
+  >.name {
+    flex-shrink: 0;
+  }
+
+  >.info {
+    color: $color-font-sub;
+    font-size: $size-font-sub;
+    text-align: end;
+  }
+
+  >.list {
+    flex-basis: 0;
+    flex-grow: 1;
+    overflow: auto;
+    padding: 1em $gap 3em $gap;
+    margin: 0 (-$gap);
+
+    >.separate {
+      position: relative;
+      padding-top: 0.5em;
+      border-top: 1px solid $color-border-sub;
+      margin-top: 2em;
+      margin-bottom: 1em;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: -0.7em;
+        transform: translate(-50%, 0);
+        width: 1.5em;
+        height: 1em;
+        padding: 0 0.8em;
+        background-color: white;
+        background-image: url(../../image/check.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: $color-font-sub;
+      }
+    }
+
+    .note {
+      margin: 0.3em 0;
+      padding: 0.5em $gap;
+      margin: 0 (-$gap);
+    }
+  }
+
+  >.panel {
+    left: 0;
+  }
+}

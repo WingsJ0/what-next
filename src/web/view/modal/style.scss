@@ -1,0 +1,62 @@
+@import "../../style/color";
+@import "../../style/size";
+
+.modal {
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-mask;
+
+  > .dialog {
+    width: 25em;
+    height: 13em;
+    background-color: white;
+    border-radius: 0.7em;
+
+    > div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+    }
+    > .text {
+      // height: 65%;
+      margin-top: 2em;
+      margin-bottom: 1em;
+      font-size: $size-font-large;
+    }
+    > .content {
+      display: block;
+      overflow: hidden;
+      padding: 0 2em;
+      margin-bottom: 1em;
+      text-align: center;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+    > .buttons {
+      height: 35%;
+      border-top: $size-border-sub solid $color-border-sub;
+
+      > .button {
+        padding: 0 1em;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          border-right: $size-border-sub solid $color-border-sub;
+        }
+      }
+    }
+  }
+
+  .alert {
+    color: $color-alert;
+  }
+}

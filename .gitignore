@@ -1,0 +1,7 @@
+package-lock.json
+node_modules
+release
+dist/data
+dist/resource
+dist/index.html
+dist/index.js

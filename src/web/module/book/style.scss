@@ -1,0 +1,32 @@
+@import '../../style/color';
+
+.book {
+  overflow: hidden;
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+
+  >.items {
+    overflow: auto;
+    height: 100%;
+    padding: 0 1em 3em 1em;
+    box-sizing: border-box;
+
+    >.chapter {
+      &.active {
+        border-bottom: 1px solid $color-main;
+        color: $color-main;
+      }
+    }
+  }
+
+  .clone {
+    position: fixed;
+    left: 0;
+    padding: 0 1em;
+    box-sizing: border-box;
+    background-color: $color-sub;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}
